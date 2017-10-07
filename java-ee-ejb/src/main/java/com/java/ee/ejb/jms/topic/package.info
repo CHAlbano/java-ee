@@ -1,0 +1,20 @@
+Para funcionar será necessário criar no SA:
+- Servidor JMS
+- Módulo JMS
+	- Factory de Conexão
+	- Tópico
+	- Servidor externo
+		- Weblogic (quando o servidor externo é em WL)
+			- Geral (tela)
+				- URL de Conexão JNDI: t3://${ip_servidor_destino}:${porta_servidor_destino}
+				- Factory do Contexto Inicial JNDI: weblogic.jndi.WLInitialContextFactory
+			- Destino (tela)
+				- Novo
+					- Nome da JNDI Local: (colocar o nome da minha jndi (tópico) local, que irá receber as mensagens pelo tópico remoto)
+					- Nome da JNDI Remota: (color o nome do meu jndi (tópico) remoto)
+			- Factories de Conexão
+				- Novo
+					- Nome da JNDI Local: (colocar o nome da minha jndi (factory) local, que irá receber as mensagens pelo tópico remoto)
+					- Nome da JNDI Remota: (color o nome do meu jndi (factory) remoto)
+		- Jboss EAP
+		- WildFly

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" 
+			 xmlns="http://java.sun.com/xml/ns/persistence" 
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+			 					 http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="totvs-totvscard-ejb" transaction-type="RESOURCE_LOCAL">
+		<provider>com.totvs.core.service.persistence.TBPersistenceProvider</provider>
+		
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+			<property name="hibernate.cache.use_second_level_cache" value="false" />
+			<property name="hibernate.ejb.cfgfile" value="hibernate.cfg.xml" />
+			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
+			<property name="hibernate.ejb.interceptor.session_scoped" value="com.totvs.core.service.InterceptorHibernate"/>
+			 
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver" />
+			<property name="hibernate.connection.url" value="jdbc:oracle:thin:@10.51.2.171:1521:tc02dev" />
+			<property name="hibernate.connection.username" value="TOTVSCARD_APP" />
+			<property name="hibernate.connection.password" value="TOTVSCARD_APP" />
+		</properties>
+	</persistence-unit>
+
+</persistence>

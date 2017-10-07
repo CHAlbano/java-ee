@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>java-ee-ejb</artifactId>
+	<groupId>com.shamaniac.java.ee</groupId>
+	<packaging>ejb</packaging>
+	<version>1.0.0</version>
+	<name>Java EE EJB</name>
+
+	<dependencies>
+
+		<!-- EJB -->
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>ejb-api</artifactId>
+			<version>3.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- JMS -->
+
+		<dependency>
+			<groupId>org.jboss.spec.javax.jms</groupId>
+			<artifactId>jboss-jms-api_1.1_spec</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency>
+
+		<!-- HIBERNATE -->
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.2.11.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>ejb3-persistence</artifactId>
+			<version>1.0.2.GA</version>
+			<type>pom</type>
+		</dependency>
+
+		<!-- JAVA EE -->
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+
+	</dependencies>
+
+	<build>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<ejbVersion>3.0</ejbVersion>
+					<generateClient>false</generateClient>
+					<filtering>true</filtering>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+
+</project>
