@@ -13,15 +13,15 @@ import javax.jms.TextMessage;
 
 import com.java.ee.ejb.jms.topic.TopicUtilJMS;
  
-@MessageDriven(activationConfig = {
+/*@MessageDriven(activationConfig = {
 		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic"),
 		@ActivationConfigProperty(propertyName = "destinationJndiName", propertyValue = TopicUtilJMS.LOCAL_TOPIC),
 		@ActivationConfigProperty(propertyName = "connectionFactoryJndiName", propertyValue = TopicUtilJMS.LOCAL_FACTORY),
-		/*@ActivationConfigProperty(propertyName = "subscriptionDurability", propertyValue = "Durable"),*/
+		@ActivationConfigProperty(propertyName = "subscriptionDurability", propertyValue = "Durable"),
 		@ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge"),
-		/*@ActivationConfigProperty(propertyName = "clientId", propertyValue = "mesaId")*/ })
-/*@TransactionManagement(value = TransactionManagementType.CONTAINER)*/
-/*@TransactionAttribute(value = TransactionAttributeType.NOT_SUPPORTED)*/
+		@ActivationConfigProperty(propertyName = "clientId", propertyValue = "mesaId") })
+@TransactionManagement(value = TransactionManagementType.CONTAINER)
+@TransactionAttribute(value = TransactionAttributeType.NOT_SUPPORTED)*/
 public class ConsumerJboss implements MessageListener { 
  
 	public void onMessage(Message message) {

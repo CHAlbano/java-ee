@@ -11,15 +11,15 @@ import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
-/*@MessageDriven(name = "topicJms", activationConfig = {
+@MessageDriven(name = "mesaTopic", activationConfig = {
 		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic"),
 		@ActivationConfigProperty(propertyName = "connectionFactoryJndiName", propertyValue = TopicUtilJMS.LOCAL_FACTORY),
 		@ActivationConfigProperty(propertyName = "destinationJndiName", propertyValue = TopicUtilJMS.LOCAL_TOPIC),
-		@ActivationConfigProperty(propertyName = "subscriptionDurability", propertyValue = "Durable") })*/
+		@ActivationConfigProperty(propertyName = "subscriptionDurability", propertyValue = "Durable") })
 @TransactionManagement(value = TransactionManagementType.CONTAINER)
 @TransactionAttribute(value = TransactionAttributeType.REQUIRED)
 public class ConsumerWeblogic implements MessageListener {
-
+ 
 	public void onMessage(Message message) {
 		
 		TextMessage textMessage = (TextMessage) message;
